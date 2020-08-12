@@ -4,10 +4,10 @@ $(document).ready(function() {
     const fullname = $("#name").val();
     const fulladdress = $("#address").val();
     const fullphone = $("#phone").val();
-    $("ul#contacts").prepend("<li class='clickable'>Why hello there!</li>");
+    $("ul#contacts").prepend("<li id='contact-showing'>" + fullname + "</li><p class='hidden'>" + fulladdress + fullphone + "</p>");
   });
   
-  $(".clickable").click(function() {
+  $("ul#contacts").children("li").first().click(function() {
     $("#contact-showing").toggle();
     $("#contact-hidden").toggle();
   });
